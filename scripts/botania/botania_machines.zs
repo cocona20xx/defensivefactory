@@ -1,22 +1,7 @@
 import mods.botania.Apothecary;
 import mods.botania.ManaInfusion;
+import mods.botania.RuneAltar;
 
-//--botania specific crafting table recipe changes--
-
-//pestleandmortar stuff removal -- botania dyes to be given macerator recipes
-recipes.remove(<botania:pestleandmortar>);
-recipes.remove(<botania:dye:*>);
-
-//new petal apoth. recipe: uses petal dye dust and some bronze
-recipes.remove(<botania:altar>);
-recipes.addShaped("simpicit-petal_apoth", <botania:altar>, [[<ore:slabCobblestone>, <botania:dye:*>, <ore:slabCobblestone>],
-															[<ore:screwBronze>, <ore:cobblestone>, <ore:screwBronze>],
-															[<ore:cobblestone>, <ore:cobblestone>, <ore:cobblestone>]]);
-//new runic altar recipe
-recipes.remove(<botania:runealtar>);
-recipes.addShaped("simplict-runic_altar", <botania:runealtar>, [[<ore:livingrock>, <ore:livingrock>, <ore:livingrock>],
-																[<ore:ingotManasteel>, <ore:plateBronze>, <ore:ingotManasteel>],
-																[<ore:livingrock>, <ore:manaPearl> | <ore:manaDiamond>, <ore:livingrock>]]);
 //--petal apth. recipe changes--
 
 //these flowers are too easy for mana gen, and so are fully removed
@@ -54,3 +39,9 @@ mods.botania.ManaInfusion.addInfusion(<botania:manaresource>, <ore:ingotSteel>, 
 //--pure daisy recipe changes--
 
 //--rune altar recipe changes--
+
+//brass
+mods.botania.RuneAltar.addRecipe(<ore:dustBrass>.firstItem, [<ore:dustBronze>, <ore:powderMana>, <ore:dustBronze>, <ore:dustCoal>], 1000);
+
+//magnetic iron rod
+mods.botania.RuneAltar.addRecipe(<ore:stickIronMagnetic>.firstItem, [<ore:stickIron>, <ore:dustRedstone>, <ore:dustRedstone>, <ore:dustRedstone>, <ore:dustRedstone>], 2000);
